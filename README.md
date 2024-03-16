@@ -1,0 +1,7 @@
+This Python script utilizes the pandas library to read data from a CSV file named 'input.csv' containing device information, including device types and their corresponding access links. The script prompts the user to input a device type, and then extracts the domain from the access link associated with that device type.
+
+The script first reads the CSV file into a pandas DataFrame using the pd.read_csv() function. It then defines a regular expression pattern domain_pattern to extract the domain from a URL. The pattern searches for URLs starting with 'http://' or 'https://' followed by the domain, enclosed in <url> tags. The re.IGNORECASE flag ensures case-insensitivity during the search.
+
+The extract_domain() function takes a device type as input and returns the extracted domain from the access link associated with that device type. It filters the DataFrame to select rows corresponding to the specified device type, and then applies the regular expression pattern to extract the domain from the access link. If a match is found, it returns the extracted domain; otherwise, it returns a message indicating that the domain was not found in the URL.
+
+After obtaining the user input for the device type, the script calls the extract_domain() function to extract the domain for the specified device type. It then prints the extracted domain along with a descriptive message, indicating the device type for which the domain was extracted.
